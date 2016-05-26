@@ -48,5 +48,10 @@ speciation(archivespeciation, folderCONVP)
 
 folderout = os.path.join('..','data', 'out', 'speciation', '')
 folderPMC = os.path.join('..','data', 'out', 'desagregation', '')
+
+print 'Start PMC'
 pmc(folderPMC)
+
+print 'Start testing PMC'
 testingpmc(folderout)
+print 'Testing PMC - End'
