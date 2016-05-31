@@ -6,18 +6,11 @@ import os
 
 
 def listaCSV(direccion):
-   	#Variable para la ruta al directorio
-	path = os.path.join(direccion,'')
-	#print direccion
-
-	#Lista vacia para incluir los ficheros
+   	path = os.path.join(direccion,'')
 	lstFilesEmissions = []
 
-	#Lista con todos los ficheros del directorio:
-	lstDir = os.walk(path)   #os.walk()Lista directorios y ficheros
-	datos = {}
+	lstDir = os.walk(path) 
 
-	#Crea una lista de los ficheros que existen en el directorio y los incluye a la lista.
 	for root, dirs, files in lstDir:
 	    for fichero in files:
 	        (nombreFichero, extension) = os.path.splitext(fichero)

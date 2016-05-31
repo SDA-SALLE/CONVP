@@ -41,17 +41,13 @@ for archive in archives:
 
 print 'Start speciation CONVP'
 
-#CONVP
+#Speciation
 archivespeciation = os.path.join ('..', 'data', 'in', 'PE', 'BLD_CONVP_SCP_PROF_PM25.xlsx')
 folderCONVP = os.path.join('..','data', 'out', 'desagregation', '')
 speciation(archivespeciation, folderCONVP)
 
+#PMC
 folderout = os.path.join('..','data', 'out', 'speciation', '')
 folderPMC = os.path.join('..','data', 'out', 'desagregation', '')
-
-print 'Start PMC'
 pmc(folderPMC)
-
-print 'Start testing PMC'
 testingpmc(folderout)
-print 'Testing PMC - End'

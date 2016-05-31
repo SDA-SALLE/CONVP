@@ -1,8 +1,9 @@
-#created by @ceapalaciosal
-#under code Creative Commons
 # -*- encoding: utf-8 -*-
 
 #! /usr/bin/env python
+#created by @ceapalaciosal
+#under code Creative Commons
+
 import csv
 import os
 import xlrd

@@ -132,8 +132,6 @@ def testingpmc(folder):
 		for  i in range(1, MPMC.shape[0]):
 			for x in range(6, MPMC.shape[1]):
 
-				#print 0 > float(MPMC[i][x])
-
 				if 0 > float(MPMC[i][x]) or 0.0 > float(MPMC[i][x]): 
 					print 'Review process number < 0'
 				else:

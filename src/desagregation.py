@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 #! /usr/bin/env python
 #created by @ceapalaciosal
 #under code Creative Commons
@@ -162,7 +163,6 @@ def final(Archive):
 		csvsalida.write(data[key]['GENERAL']['POLNAME'][0])
 		csvsalida.write(',')
 		csvsalida.write(data[key]['GENERAL']['UNIT'][0])
-		#csvsalida.write(',')
 		hours = data[key]['hours'].keys()
 		for hour in hours:
 			csvsalida.write(',')

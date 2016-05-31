@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 #! /usr/bin/env python
 #created by @ceapalaciosal
 #under code Creative Commons
@@ -67,12 +68,10 @@ def emisionsconvp(archive):
 	 	data[key]['Emisions']['SEG'].append(data[key]['General']['DAYS'][0] * 11 * 60 * 60)
 
 	 	#g/proyect calculation 
-	 	#print data[key]['General']['AREA'][0], data[key]['Emisions']['SEG'][0], constants[PM25], ' = ', data[key]['General']['AREA'][0] * data[key]['Emisions']['SEG'][0] * constants[PM25]
 	 	data[key]['Emisions']['PM25']['g/proyecto'].append(data[key]['General']['AREA'][0] * data[key]['Emisions']['SEG'][0] * constants[PM25])
 	 	data[key]['Emisions']['PM10']['g/proyecto'].append(data[key]['General']['AREA'][0] * data[key]['Emisions']['SEG'][0] * constants[PM10])
 
 	 	#Emisions
-	 	#print data[key]['Emisions']['PM25']['g/proyecto'][0], data[key]['General']['DAYS'][0], '=', data[key]['Emisions']['PM25']['g/proyecto'][0] / data[key]['General']['DAYS'][0] 
 	 	data[key]['Emisions']['PM25']['E'].append(data[key]['Emisions']['PM25']['g/proyecto'][0] / data[key]['General']['DAYS'][0])
 	 	data[key]['Emisions']['PM10']['E'].append(data[key]['Emisions']['PM10']['g/proyecto'][0] / data[key]['General']['DAYS'][0])
 
@@ -80,15 +79,10 @@ def emisionsconvp(archive):
 	 	data[key]['Emisions']['PM25']['g'].append(data[key]['Emisions']['PM25']['E'][0] * data[key]['General']['DAYS'][0])
 	 	data[key]['Emisions']['PM10']['g'].append(data[key]['Emisions']['PM10']['E'][0] * data[key]['General']['DAYS'][0])
 
-	 	#print data[key]['Emisions']['PM25']['g'][0]
-
 	 	#T/Year
 	 	data[key]['Emisions']['PM25']['t'].append(data[key]['Emisions']['PM25']['g'][0]/1000000)
 	 	data[key]['Emisions']['PM10']['t'].append(data[key]['Emisions']['PM10']['g'][0]/1000000)
 
-
-
-	#print data
 	folder = os.path.join('..', 'data', 'out', 'emisions', '')
 	writeEmisions(data, folder)
 
@@ -107,8 +101,6 @@ def emisionsTYear(archive):
 	head = None
 	ETYearPM25 = 0
 	ETYearPM10 = 0
-	#print MEmisions[1][colPM25]
-	#print MEmisions[1][colPM10]
 
 	for i in range(1, MEmisions.shape[0]):
 		ETYearPM25 += float(MEmisions[i][colPM25])

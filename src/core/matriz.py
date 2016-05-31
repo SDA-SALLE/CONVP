@@ -1,8 +1,9 @@
-#created by @ceapalaciosal
-#under code Creative Commons
 # -*- encoding: utf-8 -*-
 
 #! /usr/bin/env python
+#created by @ceapalaciosal
+#under code Creative Commons
+
 
 #List Library Import
 import csv
@@ -19,16 +20,14 @@ def convertXLSX(direccion):
 	workbook = xlrd.open_workbook(direccionexcel)
 	all_worksheets = workbook.sheet_names()
 
-	data = workbook.sheet_by_index(0) #Numero de Sheet donde se encuentran los datos
+	data = workbook.sheet_by_index(0) #Numero de Sheet donde se encuentran los datos / Sheet data 
 	direccioncsv = direccionexcel + '.csv'
 
-	data_emissions = open(''.join([direccioncsv]), 'wb') #crea el csv datos Base
-	emissions = csv.writer(data_emissions, delimiter=',') #quoting=csv.QUOTE_ALL) #Abre el CSV para escritura de emsiones
-
+	data_emissions = open(''.join([direccioncsv]), 'wb') #crea el csv datos Base / Created CSV data Base
+	emissions = csv.writer(data_emissions, delimiter=',') #Abre el CSV para escritura de emsiones / Open CSV write emitions
 
  	for rownum in xrange(data.nrows):
- 		emissions.writerow([entry for entry in data.row_values(rownum)]) #unicode(entry).encode("utf-8")
-
+ 		emissions.writerow([entry for entry in data.row_values(rownum)])
  	
  	data_emissions.close()
 
